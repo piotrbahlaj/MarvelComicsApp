@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel_comics_app/features/home/presentation/home_screen.dart';
-import 'package:marvel_comics_app/features/splash_screen/bloc/splash_screen_bloc.dart';
+import 'package:marvel_comics_app/features/splash_screen/presentation/bloc/splash_screen_bloc.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
