@@ -10,7 +10,7 @@ class CustomNavigationBar extends StatefulWidget {
 }
 
 final List<String> _pages = [
-  '/',
+  '/home',
   '/search',
 ];
 
