@@ -8,7 +8,7 @@ class SplashScreenBloc extends Bloc<SplashScreenEvent, SplashScreenState> {
   SplashScreenBloc() : super(SplashScreenInitial()) {
     on<LoadSplashScreen>((event, emit) async {
       emit(SplashScreenLoading());
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 1));
       emit(SplashScreenLoaded());
     });
   }

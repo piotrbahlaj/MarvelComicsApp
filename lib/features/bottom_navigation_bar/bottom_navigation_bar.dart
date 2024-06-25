@@ -19,8 +19,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return SalomonBottomBar(
-      margin: const EdgeInsets.symmetric(horizontal: 50),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      selectedColorOpacity: 0,
+      backgroundColor: Colors.white,
       currentIndex: _currentIndex,
       onTap: (i) {
         setState(() => _currentIndex = i);
@@ -28,23 +28,29 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         router.go(_pages[i]);
       },
       items: [
-        // Home
         SalomonBottomBarItem(
-          icon: const Icon(Icons.home),
-          title: const Text('Home'),
-          selectedColor: Colors.red,
-          unselectedColor: Colors.black,
-        ),
-        SalomonBottomBarItem(
-          icon: const SizedBox(),
+          icon: const Padding(
+            padding: EdgeInsets.fromLTRB(10, 0, 50, 0),
+            child: Icon(
+              Icons.home,
+              size: 30,
+            ),
+          ),
           title: const Text(''),
-        ),
-        // Search
-        SalomonBottomBarItem(
-          icon: const Icon(Icons.search),
-          title: const Text('Search'),
           selectedColor: Colors.red,
-          unselectedColor: Colors.black,
+          unselectedColor: Colors.grey,
+        ),
+        SalomonBottomBarItem(
+          icon: const Padding(
+            padding: EdgeInsets.fromLTRB(50, 0, 10, 0),
+            child: Icon(
+              Icons.search,
+              size: 30,
+            ),
+          ),
+          title: const Text(''),
+          selectedColor: Colors.red,
+          unselectedColor: Colors.grey,
         ),
       ],
     );

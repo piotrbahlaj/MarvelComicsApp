@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:marvel_comics_app/features/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:marvel_comics_app/features/home/presentation/widgets/comics_tile.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,7 +7,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const CustomNavigationBar(),
       body: SafeArea(
         child: Column(
           children: [
