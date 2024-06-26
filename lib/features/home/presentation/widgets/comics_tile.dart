@@ -10,6 +10,11 @@ class ComicsTile extends StatelessWidget {
     final String thumbnailUrl =
         "${comic['thumbnail']['path']}.${comic['thumbnail']['extension']}";
     final router = GoRouter.of(context);
+    final List<dynamic> creators = comic['creators']['items'];
+    String creatorName = 'Unknown Creator';
+    if (creators.isNotEmpty) {
+      creatorName = creators[0]['name'];
+    }
     return InkWell(
       onTap: () => router.go('/comicDetails'),
       child: Container(
@@ -60,11 +65,17 @@ class ComicsTile extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const SizedBox(height: 8),
-                  Text(
-                    comic['description'] ?? 'No Description',
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 5, 0, 0),
+                    child: Text(
+                      'written by $creatorName',
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey,
+                      ),
+                    ),
                   ),
                 ],
               ),
