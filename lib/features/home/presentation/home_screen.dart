@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marvel_comics_app/features/home/presentation/bloc/home_bloc.dart';
 import 'package:marvel_comics_app/features/home/presentation/widgets/comics_tile.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,16 +26,27 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: SizedBox(
-                width: double.infinity,
-                child: ListView(
-                  children: const [
-                    ComicsTile(),
-                    ComicsTile(),
-                    ComicsTile(),
-                    ComicsTile(),
-                  ],
-                ),
+              child: BlocBuilder<HomeBloc, HomeState>(
+                builder: (context, state) {
+                  if (state is HomeLoading) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else if (state is HomeLoaded) {
+                    return ListView.builder(
+                      itemCount: state.comics.length,
+                      itemBuilder: (context, index) {
+                        final comic = state.comics[index];
+                        return ComicsTile(comic: comic);
+                      },
+                    );
+                  } else if (state is HomeError) {
+                    return Center(
+                      child: Text(state.message),
+                    );
+                  }
+                  return Container();
+                },
               ),
             ),
           ],

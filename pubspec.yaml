@@ -16,6 +16,8 @@ dependencies:
   bloc: ^8.1.4
   salomon_bottom_bar: ^3.3.2
   go_router: ^14.2.0
+  crypto: ^3.0.3
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +31,7 @@ flutter:
   assets:
     - assets/splash_screen.png
     - assets/book_open.png
+    - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

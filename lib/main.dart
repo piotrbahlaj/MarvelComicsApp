@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:marvel_comics_app/core/router.dart';
+import 'package:marvel_comics_app/features/home/presentation/bloc/home_bloc.dart';
 import 'package:marvel_comics_app/features/splash_screen/presentation/bloc/splash_screen_bloc.dart';
+import 'package:marvel_comics_app/services/marvel_service.dart';
 
-void main() {
-  runApp(
-    const Main(),
-  );
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  runApp(const Main());
 }
 
 class Main extends StatelessWidget {
@@ -18,6 +21,9 @@ class Main extends StatelessWidget {
       providers: [
         BlocProvider<SplashScreenBloc>(
           create: (context) => SplashScreenBloc()..add(LoadSplashScreen()),
+        ),
+        BlocProvider<HomeBloc>(
+          create: (context) => HomeBloc(MarvelService()),
         ),
       ],
       child: MaterialApp.router(

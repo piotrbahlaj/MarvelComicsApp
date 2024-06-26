@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ComicsTile extends StatelessWidget {
-  const ComicsTile({super.key});
+  const ComicsTile({super.key, required this.comic});
+  final Map<String, dynamic> comic;
 
   @override
   Widget build(BuildContext context) {
@@ -23,22 +24,18 @@ class ComicsTile extends StatelessWidget {
             ),
           ],
         ),
-        child: const SizedBox(
-          height: 220,
-          width: 300,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              comic['title'] ?? '',
+            ),
+            const SizedBox(height: 10),
+            Text(
+              comic['description'] ?? '',
+            )
+          ],
         ),
-        // child: ListView.builder(
-        //   itemCount: 20, // Replace with your actual item count
-        //   itemBuilder: (context, index) {
-        //     return ListTile(
-        //       title: Text('Item $index'),
-        //       subtitle: Text('Description of Item $index'),
-        //       leading: const Icon(Icons.star),
-        //       trailing: const Icon(Icons.arrow_forward),
-        //       onTap: () {},
-        //     );
-        //   },
-        // ),
       ),
     );
   }
