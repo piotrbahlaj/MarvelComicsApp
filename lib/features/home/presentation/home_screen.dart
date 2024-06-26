@@ -33,10 +33,12 @@ class HomeScreen extends StatelessWidget {
                       child: CircularProgressIndicator(),
                     );
                   } else if (state is HomeLoaded) {
+                    final List<Map<String, dynamic>> comicsToDisplay =
+                        state.comics.skip(2).toList();
                     return ListView.builder(
-                      itemCount: state.comics.length,
+                      itemCount: comicsToDisplay.length,
                       itemBuilder: (context, index) {
-                        final comic = state.comics[index];
+                        final comic = comicsToDisplay[index];
                         return ComicsTile(comic: comic);
                       },
                     );

@@ -7,6 +7,8 @@ class ComicsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String thumbnailUrl =
+        "${comic['thumbnail']['path']}.${comic['thumbnail']['extension']}";
     final router = GoRouter.of(context);
     return InkWell(
       onTap: () => router.go('/comicDetails'),
@@ -24,16 +26,49 @@ class ComicsTile extends StatelessWidget {
             ),
           ],
         ),
-        child: Column(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              comic['title'] ?? '',
+            //image
+            Container(
+              width: 150,
+              height: 220,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                    thumbnailUrl,
+                  ),
+                  fit: BoxFit.fill,
+                ),
+              ),
             ),
-            const SizedBox(height: 10),
-            Text(
-              comic['description'] ?? '',
-            )
+
+            //title and description
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 20, 0, 0),
+                    child: Text(
+                      comic['title'] ?? 'No Title',
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    comic['description'] ?? 'No Description',
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

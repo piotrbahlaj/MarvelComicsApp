@@ -12,7 +12,7 @@ class HomeInitial extends HomeState {}
 class HomeLoading extends HomeState {}
 
 class HomeLoaded extends HomeState {
-  final List<dynamic> comics;
+  final List<Map<String, dynamic>> comics;
 
   const HomeLoaded(this.comics);
 

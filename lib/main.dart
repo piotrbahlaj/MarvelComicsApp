@@ -23,7 +23,7 @@ class Main extends StatelessWidget {
           create: (context) => SplashScreenBloc()..add(LoadSplashScreen()),
         ),
         BlocProvider<HomeBloc>(
-          create: (context) => HomeBloc(MarvelService()),
+          create: (context) => HomeBloc(MarvelService())..add(FetchComics()),
         ),
       ],
       child: MaterialApp.router(
