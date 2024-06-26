@@ -24,8 +24,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Container(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 30),
+              child: SizedBox(
                 width: double.infinity,
                 child: ListView(
                   children: const [
