@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marvel_comics_app/features/search/presentation/bloc/search_bloc.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({super.key, required this.hintText});
@@ -20,6 +22,9 @@ class CustomSearchBar extends StatelessWidget {
           child: Column(
             children: [
               TextField(
+                onChanged: (query) {
+                  context.read<SearchBloc>().add(SearchQueryChanged(query));
+                },
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   prefixIcon: Icon(

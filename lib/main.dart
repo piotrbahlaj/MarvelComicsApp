@@ -28,7 +28,7 @@ class Main extends StatelessWidget {
         ),
         BlocProvider<SearchBloc>(
           create: (context) => SearchBloc(MarvelService()),
-        )
+        ),
       ],
       child: MaterialApp.router(
         routerConfig: router,
