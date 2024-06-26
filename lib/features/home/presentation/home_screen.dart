@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                     );
                   } else if (state is HomeLoaded) {
                     final List<Map<String, dynamic>> comicsToDisplay =
-                        state.comics.skip(2).toList();
+                        state.comics.skip(3).toList();
                     return ListView.builder(
                       itemCount: comicsToDisplay.length,
                       itemBuilder: (context, index) {

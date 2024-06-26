@@ -7,13 +7,21 @@ class ComicsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final router = GoRouter.of(context);
+    //image url
     final String thumbnailUrl =
         "${comic['thumbnail']['path']}.${comic['thumbnail']['extension']}";
-    final router = GoRouter.of(context);
+    //creators name
     final List<dynamic> creators = comic['creators']['items'];
     String creatorName = 'Unknown Creator';
     if (creators.isNotEmpty) {
       creatorName = creators[0]['name'];
+    }
+    //description
+    String description = 'No Description Available';
+    final List<dynamic> textObjects = comic['textObjects'];
+    if (textObjects.isNotEmpty) {
+      description = textObjects[0]['text'] ?? 'No Description Available';
     }
     return InkWell(
       onTap: () => router.go('/comicDetails'),
@@ -47,8 +55,7 @@ class ComicsTile extends StatelessWidget {
                 ),
               ),
             ),
-
-            //title and description
+            //title, author and description
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +63,7 @@ class ComicsTile extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(16, 20, 0, 0),
                     child: Text(
-                      comic['title'] ?? 'No Title',
+                      comic['title'],
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
@@ -74,6 +81,17 @@ class ComicsTile extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 12,
                         color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 5, 5, 5),
+                    child: Text(
+                      description,
+                      maxLines: 5,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 14,
                       ),
                     ),
                   ),
