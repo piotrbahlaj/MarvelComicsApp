@@ -31,6 +31,7 @@ flutter:
   assets:
     - assets/splash_screen.png
     - assets/book_open.png
+    - assets/no_searches.png
     - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -48,24 +48,34 @@ class SearchScreen extends StatelessWidget {
                       child: CircularProgressIndicator(),
                     );
                   } else if (state is SearchLoaded) {
-                    if (state.comics.isEmpty) {
-                      return const Center(
-                        child: Text(
-                          'There is no comic book with that name in our library. Check the spelling and try again',
-                        ),
-                      );
-                    } else {
-                      return ListView.builder(
-                        itemCount: state.comics.length,
-                        itemBuilder: (context, index) {
-                          final comic = state.comics[index];
-                          return ComicsTile(comic: comic);
-                        },
-                      );
-                    }
+                    return ListView.builder(
+                      itemCount: state.comics.length,
+                      itemBuilder: (context, index) {
+                        final comic = state.comics[index];
+                        return ComicsTile(comic: comic);
+                      },
+                    );
                   } else if (state is SearchError) {
                     return Center(
-                      child: Text(state.message),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 130, 20, 0),
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/no_searches.png',
+                            ),
+                            const SizedBox(height: 30),
+                            Text(
+                              state.message,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     );
                   }
                   return Container();

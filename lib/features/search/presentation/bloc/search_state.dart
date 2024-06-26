@@ -12,7 +12,7 @@ class SearchInitial extends SearchState {}
 class SearchLoading extends SearchState {}
 
 class SearchLoaded extends SearchState {
-  final Map<String, dynamic> comics;
+  final List<dynamic> comics;
 
   const SearchLoaded(this.comics);
   @override

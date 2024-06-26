@@ -23,7 +23,8 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       if (results.isEmpty) {
         emit(
           const SearchError(
-              'There is no comic book with that name in our library. Check the spelling and try again'),
+            'There is no comic book with that name in our library. Check the spelling and try again',
+          ),
         );
       } else {
         emit(SearchLoaded(results));
