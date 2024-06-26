@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:marvel_comics_app/core/router.dart';
 import 'package:marvel_comics_app/features/home/presentation/bloc/home_bloc.dart';
+import 'package:marvel_comics_app/features/search/presentation/bloc/search_bloc.dart';
 import 'package:marvel_comics_app/features/splash_screen/presentation/bloc/splash_screen_bloc.dart';
 import 'package:marvel_comics_app/services/marvel_service.dart';
 
@@ -25,6 +26,9 @@ class Main extends StatelessWidget {
         BlocProvider<HomeBloc>(
           create: (context) => HomeBloc(MarvelService())..add(FetchComics()),
         ),
+        BlocProvider<SearchBloc>(
+          create: (context) => SearchBloc(MarvelService()),
+        )
       ],
       child: MaterialApp.router(
         routerConfig: router,

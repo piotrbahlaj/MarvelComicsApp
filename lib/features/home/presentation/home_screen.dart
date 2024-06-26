@@ -33,6 +33,7 @@ class HomeScreen extends StatelessWidget {
                       child: CircularProgressIndicator(),
                     );
                   } else if (state is HomeLoaded) {
+                    // I ignored the first 3 positions since they had no image and description which looked poorly as front page
                     final List<Map<String, dynamic>> comicsToDisplay =
                         state.comics.skip(3).toList();
                     return ListView.builder(

@@ -35,7 +35,6 @@ class ComicsTile extends StatelessWidget {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 2,
               blurRadius: 7,
-              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -45,7 +44,7 @@ class ComicsTile extends StatelessWidget {
             //image
             Container(
               width: 150,
-              height: 220,
+              height: 250,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
@@ -66,7 +65,7 @@ class ComicsTile extends StatelessWidget {
                       comic['title'],
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
@@ -85,7 +84,7 @@ class ComicsTile extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 5, 5, 5),
+                    padding: const EdgeInsets.fromLTRB(16, 15, 5, 5),
                     child: Text(
                       description,
                       maxLines: 5,

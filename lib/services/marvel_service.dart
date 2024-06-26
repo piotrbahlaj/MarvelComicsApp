@@ -22,6 +22,19 @@ class MarvelService {
     return md5.convert(utf8.encode(ts + privateKey + publicKey)).toString();
   }
 
+  Future<Map<String, dynamic>> searchComics(String query) async {
+    final searchUrl =
+        Uri.parse('$baseUrl/comics?titleStartsWith=$query&apikey=$publicKey');
+    final response = await http.get(searchUrl);
+
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> data = json.decode(response.body);
+      return data['data']['results'];
+    } else {
+      throw Exception('Failed to load search results');
+    }
+  }
+
   Future<Map<String, dynamic>> fetchComics() async {
     final String ts = DateTime.now().millisecondsSinceEpoch.toString();
     final String hash = _generateHash(ts);
