@@ -24,7 +24,7 @@ class ComicsTile extends StatelessWidget {
       description = textObjects[0]['text'] ?? 'No Description Available';
     }
     return InkWell(
-      onTap: () => router.go('/comicDetails'),
+      onTap: () => router.push('/comicDetails', extra: comic),
       child: Container(
         margin: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(

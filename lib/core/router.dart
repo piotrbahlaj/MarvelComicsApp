@@ -28,7 +28,9 @@ final router = GoRouter(
         ),
         GoRoute(
           path: '/comicDetails',
-          builder: (context, state) => const ComicDetailsScreen(),
+          builder: (context, state) => ComicDetailsScreen(
+            comic: state.extra as Map<String, dynamic>,
+          ),
         ),
       ],
     ),
