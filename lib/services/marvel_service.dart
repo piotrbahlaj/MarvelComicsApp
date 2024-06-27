@@ -5,13 +5,11 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class MarvelService {
-  final String publicKey;
-  final String privateKey;
+  final String publicKey = dotenv.env['API_KEY'] ?? '';
+  final String privateKey = dotenv.env['PRIVATE_KEY'] ?? '';
   final String baseUrl = 'https://gateway.marvel.com/v1/public/';
 
-  MarvelService()
-      : publicKey = dotenv.env['API_KEY'] ?? '',
-        privateKey = dotenv.env['PRIVATE_KEY'] ?? '' {
+  MarvelService() {
     if (publicKey.isEmpty || privateKey.isEmpty) {
       throw Exception(
           'API_KEY and PRIVATE_KEY must be provided in the .env file.');

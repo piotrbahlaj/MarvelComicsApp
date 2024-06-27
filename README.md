@@ -1,16 +1,11 @@
-# marvel_comics_app
+HOW TO USE:
 
-A new Flutter project.
+The application requires API keys to interact with the Marvel API. These keys should be stored in a `.env` file in the root of your project directory.
 
-## Getting Started
+1. Create a `.env` file in the root of your project directory.
+2. Add the following lines to the `.env` file:
 
-This project is a starting point for a Flutter application.
+   API_KEY=your_public_api_key
+   PRIVATE_KEY=your_private_api_key
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   Replace `your_public_api_key` and `your_private_api_key` with your actual Marvel API keys.
