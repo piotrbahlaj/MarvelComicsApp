@@ -1,7 +1,5 @@
 # Marvel Comics App
 
-# HOW TO USE:
-
 The application requires API keys to interact with the Marvel API. These keys should be stored in a `.env` file in the root of your project directory.
 
 1. Create a `.env` file in the root of your project directory.
