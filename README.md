@@ -1,4 +1,6 @@
-HOW TO USE:
+# Marvel Comics App
+
+# HOW TO USE:
 
 The application requires API keys to interact with the Marvel API. These keys should be stored in a `.env` file in the root of your project directory.
 
@@ -9,3 +11,19 @@ The application requires API keys to interact with the Marvel API. These keys sh
    PRIVATE_KEY=your_private_api_key
 
    Replace `your_public_api_key` and `your_private_api_key` with your actual Marvel API keys.
+
+   # Screenshots
+
+   ### Home Screen
+
+   ![Home Screen](./screenshots/home_screen.png)
+
+   ### Search Screen
+
+   ![Search Screen](./screenshots/search_screen.png)
+   ![Search Screen](./screenshots/search_screen2.png)
+
+   ### Details Screen
+
+   ![Search Screen](./screenshots/details_screen.png)
+   ![Search Screen](./screenshots/details_screen_expanded.png)
