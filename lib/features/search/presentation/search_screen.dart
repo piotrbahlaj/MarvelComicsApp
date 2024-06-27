@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel_comics_app/features/search/presentation/bloc/search_bloc.dart';
 import 'package:marvel_comics_app/features/search/presentation/widgets/search_bar.dart';
-import 'package:marvel_comics_app/features/shared/comics_tile.dart';
+import 'package:marvel_comics_app/features/shared/widgets/comics_tile.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});

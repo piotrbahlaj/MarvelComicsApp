@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ExpandableContainer extends StatefulWidget {
-  const ExpandableContainer({
+class ExpandableTile extends StatefulWidget {
+  const ExpandableTile({
     Key? key,
     required this.title,
     required this.creators,
@@ -13,10 +13,10 @@ class ExpandableContainer extends StatefulWidget {
   final String description;
 
   @override
-  ExpandableContainerState createState() => ExpandableContainerState();
+  ExpandableTileState createState() => ExpandableTileState();
 }
 
-class ExpandableContainerState extends State<ExpandableContainer>
+class ExpandableTileState extends State<ExpandableTile>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   bool _isExpanded = false;

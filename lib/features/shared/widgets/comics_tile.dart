@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:marvel_comics_app/features/shared/comics_utils.dart';
 
 class ComicsTile extends StatelessWidget {
   const ComicsTile({super.key, required this.comic});
@@ -8,21 +9,9 @@ class ComicsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final router = GoRouter.of(context);
-    //image url
-    final String thumbnailUrl =
-        "${comic['thumbnail']['path']}.${comic['thumbnail']['extension']}";
-    //creators name
-    final List<dynamic> creators = comic['creators']['items'];
-    String creatorName = 'Unknown Creator';
-    if (creators.isNotEmpty) {
-      creatorName = creators[0]['name'];
-    }
-    //description
-    String description = 'No Description Available';
-    final List<dynamic> textObjects = comic['textObjects'];
-    if (textObjects.isNotEmpty) {
-      description = textObjects[0]['text'] ?? 'No Description Available';
-    }
+    final String thumbnailUrl = ComicUtils.getThumbnailUrl(comic);
+    final String creatorName = ComicUtils.getCreatorName(comic);
+    final String description = ComicUtils.getDescription(comic);
     return InkWell(
       onTap: () => router.push('/comicDetails', extra: comic),
       child: Container(

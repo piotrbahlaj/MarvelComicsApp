@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel_comics_app/features/home/presentation/bloc/home_bloc.dart';
-import 'package:marvel_comics_app/features/shared/comics_tile.dart';
+import 'package:marvel_comics_app/features/shared/widgets/comics_tile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
