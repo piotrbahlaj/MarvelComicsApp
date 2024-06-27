@@ -14,14 +14,14 @@ The application requires API keys to interact with the Marvel API. These keys sh
 
    ### Home Screen
 
-   ![Home Screen](./screenshots/home_screen.png)
+   <img src="./screenshots/home_screen.png" alt="Home Screen" width="300"/>
 
    ### Search Screen
 
-   ![Search Screen](./screenshots/search_screen.png)
-   ![Search Screen](./screenshots/search_screen2.png)
+   <img src="./screenshots/search_screen.png" alt="Search Screen" width="300"/>
+   <img src="./screenshots/search_screen2.png" alt="Search Screen 2" width="300"/>
 
    ### Details Screen
 
-   ![Search Screen](./screenshots/details_screen.png)
-   ![Search Screen](./screenshots/details_screen_expanded.png)
+   <img src="./screenshots/details_screen.png" alt="Details Screen" width="300"/>
+   <img src="./screenshots/details_screen_expanded.png" alt="Details Screen Expanded" width="300"/>
