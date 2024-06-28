@@ -30,7 +30,12 @@ class SearchScreen extends StatelessWidget {
                     return Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 230, 0, 20),
+                          padding: EdgeInsets.fromLTRB(
+                            0,
+                            MediaQuery.of(context).size.height * 0.27,
+                            0,
+                            20,
+                          ),
                           child: Image.asset(
                             'assets/book_open.png',
                           ),
@@ -56,7 +61,12 @@ class SearchScreen extends StatelessWidget {
                   } else if (state is SearchError) {
                     return Center(
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(20, 130, 20, 0),
+                        padding: EdgeInsets.fromLTRB(
+                          20,
+                          MediaQuery.of(context).size.height * 0.15,
+                          20,
+                          0,
+                        ),
                         child: Column(
                           children: [
                             Image.asset(

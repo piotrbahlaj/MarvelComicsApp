@@ -10,4 +10,5 @@ class MarvelColors {
   static final expandableContainer2 = Colors.grey.shade300;
   static final searchBar = Colors.grey.shade200;
   static final searchImage = Colors.grey.shade500;
+  static const comicTile = Colors.white;
 }

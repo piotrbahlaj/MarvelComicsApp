@@ -30,11 +30,11 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       },
       items: [
         SalomonBottomBarItem(
-          icon: const Padding(
-            padding: EdgeInsets.fromLTRB(10, 0, 50, 0),
+          icon: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 0, 50, 0),
             child: Icon(
               Icons.home,
-              size: 30,
+              size: MediaQuery.of(context).size.height * 0.035,
             ),
           ),
           title: const Text(''),
@@ -42,11 +42,11 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           unselectedColor: MarvelColors.navBarItemUnselected,
         ),
         SalomonBottomBarItem(
-          icon: const Padding(
-            padding: EdgeInsets.fromLTRB(50, 0, 10, 0),
+          icon: Padding(
+            padding: const EdgeInsets.fromLTRB(50, 0, 10, 0),
             child: Icon(
               Icons.search,
-              size: 30,
+              size: MediaQuery.of(context).size.height * 0.035,
             ),
           ),
           title: const Text(''),

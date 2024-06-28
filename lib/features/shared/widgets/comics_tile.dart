@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:marvel_comics_app/core/text_styles.dart';
+import 'package:marvel_comics_app/core/theme.dart';
 import 'package:marvel_comics_app/features/shared/comics_utils.dart';
 
 class ComicsTile extends StatelessWidget {
@@ -18,7 +19,7 @@ class ComicsTile extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: MarvelColors.comicTile,
           borderRadius: BorderRadius.circular(5),
           boxShadow: [
             BoxShadow(

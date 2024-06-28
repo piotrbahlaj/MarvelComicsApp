@@ -19,7 +19,7 @@ class ComicDetailsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 80,
+        toolbarHeight: MediaQuery.of(context).size.width * 0.2,
         title: const Text(
           'Details',
           style: TextStyles.detailScreenTitle,

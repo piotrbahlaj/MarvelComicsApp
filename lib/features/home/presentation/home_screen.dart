@@ -14,14 +14,14 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              color: MarvelColors.mainBackground,
-              width: double.infinity,
-              height: 80,
-              padding: const EdgeInsets.fromLTRB(16, 24, 16, 16),
-              child: const Text(
-                'Marvel Comics',
-                style: TextStyles.mainTitle,
+            const Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(16, 24, 16, 16),
+                child: Text(
+                  'Marvel Comics',
+                  style: TextStyles.mainTitle,
+                ),
               ),
             ),
             Expanded(

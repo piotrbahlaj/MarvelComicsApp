@@ -10,7 +10,10 @@ class DetailsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        fixedSize: const Size(328, 52),
+        fixedSize: Size(
+          MediaQuery.of(context).size.width * 0.9,
+          MediaQuery.of(context).size.width * 0.14,
+        ),
         backgroundColor: MarvelColors.detailsButton,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
