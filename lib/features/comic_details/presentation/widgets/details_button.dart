@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DetailsButton extends StatelessWidget {
-  const DetailsButton({super.key});
+  const DetailsButton({super.key, required this.onPressed});
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class DetailsButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: const Text(
         'Find out more',
         style: TextStyle(

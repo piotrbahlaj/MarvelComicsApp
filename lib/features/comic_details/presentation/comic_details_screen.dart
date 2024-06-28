@@ -14,6 +14,8 @@ class ComicDetailsScreen extends StatelessWidget {
     final String thumbnailUrl = ComicUtils.getThumbnailUrl(comic);
     final String creatorName = ComicUtils.getCreatorName(comic);
     final String description = ComicUtils.getDescription(comic);
+    final String comicUrl = ComicUtils.getWebsiteUrl(comic);
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
@@ -50,11 +52,15 @@ class ComicDetailsScreen extends StatelessWidget {
               description: description,
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: 0,
             left: 15,
             right: 15,
-            child: DetailsButton(),
+            child: DetailsButton(
+              onPressed: () async {
+                await ComicUtils.redirectToWebsite(comicUrl);
+              },
+            ),
           ),
         ],
       ),
