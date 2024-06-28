@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marvel_comics_app/core/text_styles.dart';
+import 'package:marvel_comics_app/core/theme.dart';
 
 class ExpandableTile extends StatefulWidget {
   const ExpandableTile({
@@ -75,7 +76,7 @@ class ExpandableTileState extends State<ExpandableTile>
             height: _isExpanded ? maxHeight : minHeight,
             width: double.infinity,
             decoration: const BoxDecoration(
-              color: Colors.white,
+              color: MarvelColors.expandableContainer,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20),
                 topRight: Radius.circular(20),
@@ -115,11 +116,13 @@ class ExpandableTileState extends State<ExpandableTile>
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: _isExpanded ? Colors.white : Colors.grey.shade300,
+                    color: _isExpanded
+                        ? MarvelColors.expandableContainer
+                        : MarvelColors.expandableContainer2,
                     borderRadius: BorderRadius.circular(25),
                   ),
-                  width: 80,
-                  height: 7,
+                  width: MediaQuery.of(context).size.width * 0.2,
+                  height: MediaQuery.of(context).size.height * 0.008,
                 ),
               ),
             ),

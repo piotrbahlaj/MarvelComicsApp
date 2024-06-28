@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marvel_comics_app/core/text_styles.dart';
+import 'package:marvel_comics_app/core/theme.dart';
 import 'package:marvel_comics_app/features/search/presentation/bloc/search_bloc.dart';
 
 class CustomSearchBar extends StatelessWidget {
@@ -16,7 +18,7 @@ class CustomSearchBar extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
-            color: Colors.grey.shade200,
+            color: MarvelColors.searchBar,
             borderRadius: BorderRadius.circular(5),
           ),
           child: Column(
@@ -29,12 +31,10 @@ class CustomSearchBar extends StatelessWidget {
                   border: InputBorder.none,
                   prefixIcon: Icon(
                     Icons.search,
-                    color: Colors.grey.shade500,
+                    color: MarvelColors.searchImage,
                   ),
                   hintText: hintText,
-                  hintStyle: TextStyle(
-                    color: Colors.grey.shade500,
-                  ),
+                  hintStyle: TextStyles.searchBarText,
                 ),
               ),
             ],

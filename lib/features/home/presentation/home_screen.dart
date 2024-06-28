@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel_comics_app/core/text_styles.dart';
+import 'package:marvel_comics_app/core/theme.dart';
 import 'package:marvel_comics_app/features/home/presentation/bloc/home_bloc.dart';
 import 'package:marvel_comics_app/features/shared/widgets/comics_tile.dart';
 
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              color: Colors.white,
+              color: MarvelColors.mainBackground,
               width: double.infinity,
               height: 80,
               padding: const EdgeInsets.fromLTRB(16, 24, 16, 16),
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                   if (state is HomeLoading) {
                     return const Center(
                       child: CircularProgressIndicator(
-                        color: Colors.red,
+                        color: MarvelColors.circularIndicator,
                       ),
                     );
                   } else if (state is HomeLoaded) {

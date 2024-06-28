@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:marvel_comics_app/core/theme.dart';
 import 'package:marvel_comics_app/features/splash_screen/presentation/bloc/splash_screen_bloc.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -37,7 +38,7 @@ class SplashScreen extends StatelessWidget {
                         width: 40,
                         height: 40,
                         child: CircularProgressIndicator(
-                          color: Colors.red,
+                          color: MarvelColors.circularIndicator,
                         ),
                       ),
                     ),

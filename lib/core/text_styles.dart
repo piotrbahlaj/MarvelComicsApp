@@ -33,6 +33,11 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 14,
   );
+  static const TextStyle comicDetailsButton = TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
   // search screen
   static const TextStyle searchTitle = TextStyle(
     fontWeight: FontWeight.w500,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:marvel_comics_app/core/theme.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class CustomNavigationBar extends StatefulWidget {
@@ -20,7 +21,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   Widget build(BuildContext context) {
     return SalomonBottomBar(
       selectedColorOpacity: 0,
-      backgroundColor: Colors.white,
+      backgroundColor: MarvelColors.mainBackground,
       currentIndex: _currentIndex,
       onTap: (i) {
         setState(() => _currentIndex = i);
@@ -37,8 +38,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
             ),
           ),
           title: const Text(''),
-          selectedColor: Colors.red,
-          unselectedColor: Colors.grey,
+          selectedColor: MarvelColors.navBarItemSelected,
+          unselectedColor: MarvelColors.navBarItemUnselected,
         ),
         SalomonBottomBarItem(
           icon: const Padding(
@@ -49,8 +50,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
             ),
           ),
           title: const Text(''),
-          selectedColor: Colors.red,
-          unselectedColor: Colors.grey,
+          selectedColor: MarvelColors.navBarItemSelected,
+          unselectedColor: MarvelColors.navBarItemUnselected,
         ),
       ],
     );
