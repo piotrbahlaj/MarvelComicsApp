@@ -57,8 +57,8 @@ class ComicDetailsScreen extends StatelessWidget {
             left: 15,
             right: 15,
             child: DetailsButton(
-              onPressed: () async {
-                await ComicUtils.redirectToWebsite(comicUrl);
+              onPressed: () {
+                ComicUtils.redirectToWebsite(comicUrl);
               },
             ),
           ),

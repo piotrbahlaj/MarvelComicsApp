@@ -30,7 +30,9 @@ class HomeScreen extends StatelessWidget {
                 builder: (context, state) {
                   if (state is HomeLoading) {
                     return const Center(
-                      child: CircularProgressIndicator(),
+                      child: CircularProgressIndicator(
+                        color: Colors.red,
+                      ),
                     );
                   } else if (state is HomeLoaded) {
                     // I ignored the first 3 positions since they had no image and description which looked poorly as front page
