@@ -48,7 +48,7 @@ class ExpandableTileState extends State<ExpandableTile>
     super.dispose();
   }
 
-  void _toggleExpanded() {
+  void _toggleContainer() {
     setState(() {
       _isExpanded = !_isExpanded;
       if (_isExpanded) {
@@ -65,7 +65,7 @@ class ExpandableTileState extends State<ExpandableTile>
     final double maxHeight = MediaQuery.of(context).size.height * 0.6;
 
     return GestureDetector(
-      onTap: _toggleExpanded,
+      onTap: _toggleContainer,
       child: Stack(
         children: [
           AnimatedContainer(
