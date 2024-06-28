@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:marvel_comics_app/core/text_styles.dart';
 import 'package:marvel_comics_app/features/shared/comics_utils.dart';
 
 class ComicsTile extends StatelessWidget {
@@ -32,8 +33,8 @@ class ComicsTile extends StatelessWidget {
           children: [
             //image
             Container(
-              width: 150,
-              height: 250,
+              width: MediaQuery.of(context).size.width * 0.4,
+              height: MediaQuery.of(context).size.height * 0.29,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
@@ -52,10 +53,7 @@ class ComicsTile extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(16, 20, 0, 0),
                     child: Text(
                       comic['title'],
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
+                      style: TextStyles.comicTitle,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -66,10 +64,7 @@ class ComicsTile extends StatelessWidget {
                       'written by $creatorName',
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey,
-                      ),
+                      style: TextStyles.comicCreator,
                     ),
                   ),
                   Padding(
@@ -78,9 +73,7 @@ class ComicsTile extends StatelessWidget {
                       description,
                       maxLines: 5,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 14,
-                      ),
+                      style: TextStyles.comicDescription,
                     ),
                   ),
                 ],

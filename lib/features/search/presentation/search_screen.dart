@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marvel_comics_app/core/text_styles.dart';
 import 'package:marvel_comics_app/features/search/presentation/bloc/search_bloc.dart';
 import 'package:marvel_comics_app/features/search/presentation/widgets/search_bar.dart';
 import 'package:marvel_comics_app/features/shared/widgets/comics_tile.dart';
@@ -36,10 +37,7 @@ class SearchScreen extends StatelessWidget {
                         ),
                         const Text(
                           'Start typing to find a particular comic',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18,
-                          ),
+                          style: TextStyles.searchTitle,
                         ),
                       ],
                     );
@@ -68,10 +66,7 @@ class SearchScreen extends StatelessWidget {
                             Text(
                               state.message,
                               textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18,
-                              ),
+                              style: TextStyles.searchErrorMessage,
                             ),
                           ],
                         ),

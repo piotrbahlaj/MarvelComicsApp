@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marvel_comics_app/core/text_styles.dart';
 import 'package:marvel_comics_app/features/home/presentation/bloc/home_bloc.dart';
 import 'package:marvel_comics_app/features/shared/widgets/comics_tile.dart';
 
@@ -19,10 +20,7 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(16, 24, 16, 16),
               child: const Text(
                 'Marvel Comics',
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 24,
-                ),
+                style: TextStyles.mainTitle,
               ),
             ),
             Expanded(

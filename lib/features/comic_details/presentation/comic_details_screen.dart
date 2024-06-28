@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:marvel_comics_app/core/text_styles.dart';
 import 'package:marvel_comics_app/features/comic_details/presentation/widgets/details_button.dart';
 import 'package:marvel_comics_app/features/comic_details/presentation/widgets/expandable_tile.dart';
 import 'package:marvel_comics_app/features/shared/comics_utils.dart';
@@ -21,10 +22,7 @@ class ComicDetailsScreen extends StatelessWidget {
         toolbarHeight: 80,
         title: const Text(
           'Details',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
-          ),
+          style: TextStyles.detailScreenTitle,
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),

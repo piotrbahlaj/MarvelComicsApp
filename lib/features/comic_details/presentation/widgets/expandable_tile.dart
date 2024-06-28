@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marvel_comics_app/core/text_styles.dart';
 
 class ExpandableTile extends StatefulWidget {
   const ExpandableTile({
@@ -87,19 +88,14 @@ class ExpandableTileState extends State<ExpandableTile>
                   padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
                   child: Text(
                     widget.title,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: TextStyles.comicDetailsTitle,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                   child: Text(
                     widget.creators,
-                    style: TextStyle(
-                      color: Colors.grey.shade500,
-                    ),
+                    style: TextStyles.comicDetailsCreator,
                   ),
                 ),
                 if (_isAnimationComplete && _isExpanded)
@@ -107,10 +103,7 @@ class ExpandableTileState extends State<ExpandableTile>
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       widget.description,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                      ),
+                      style: TextStyles.comicDetailsDescription,
                     ),
                   ),
               ],
