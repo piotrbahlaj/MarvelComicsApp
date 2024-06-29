@@ -29,12 +29,10 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         _latestQuery = query;
       },
     );
-
     if (query.isEmpty) {
       emit(SearchInitial());
       return;
     }
-
     emit(SearchLoading());
     try {
       final results = await marvelService.searchComics(query);

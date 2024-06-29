@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:marvel_comics_app/core/router.dart';
+import 'package:marvel_comics_app/features/bottom_navigation_bar/cubit/bottom_nav_bar_cubit.dart';
+import 'package:marvel_comics_app/features/comic_details/presentation/cubit/expandable_tile_cubit.dart';
 import 'package:marvel_comics_app/features/home/presentation/bloc/home_bloc.dart';
 import 'package:marvel_comics_app/features/search/presentation/bloc/search_bloc.dart';
 import 'package:marvel_comics_app/features/splash_screen/presentation/bloc/splash_screen_bloc.dart';
@@ -29,6 +31,12 @@ class Main extends StatelessWidget {
         BlocProvider<SearchBloc>(
           create: (context) => SearchBloc(MarvelService()),
         ),
+        BlocProvider<BottomNavBarCubit>(
+          create: (_) => BottomNavBarCubit(),
+        ),
+        BlocProvider<ExpandableTileCubit>(
+          create: (_) => ExpandableTileCubit(),
+        )
       ],
       child: MaterialApp.router(
         routerConfig: router,
