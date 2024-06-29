@@ -6,4 +6,8 @@ class ExpandableTileCubit extends Cubit<bool> {
   void toggleExpansion() {
     emit(!state);
   }
+
+  void reset() {
+    emit(false);
+  }
 }

@@ -19,13 +19,13 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   void _onSearchQueryChanged(
       SearchQueryChanged event, Emitter<SearchState> emit) async {
     final query = event.query;
+
     if (_searchTimer?.isActive ?? false) {
       _searchTimer?.cancel();
     }
     _searchTimer = Timer(
       const Duration(milliseconds: 400),
       () async {
-        final query = event.query;
         _latestQuery = query;
       },
     );

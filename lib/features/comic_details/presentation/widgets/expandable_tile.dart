@@ -20,11 +20,13 @@ class ExpandableTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final double minHeight = MediaQuery.of(context).size.height * 0.2;
     final double maxHeight = MediaQuery.of(context).size.height * 0.6;
+    final cubit = context.read<ExpandableTileCubit>();
+    cubit.reset();
 
     return BlocBuilder<ExpandableTileCubit, bool>(
       builder: (context, isExpanded) {
         return GestureDetector(
-          onTap: () => context.read<ExpandableTileCubit>().toggleExpansion(),
+          onTap: () => cubit.toggleExpansion(),
           child: Stack(
             children: [
               AnimatedContainer(
