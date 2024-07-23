@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.fromLTRB(16, 24, 16, 16),
                 child: Text(
-                  'Marvel Comicsssss',
+                  'Marvel Comics',
                   style: TextStyles.mainTitle,
                 ),
               ),
