@@ -40,7 +40,7 @@ class Main extends StatelessWidget {
       ],
       child: MaterialApp.router(
         routerConfig: router,
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: true,
       ),
     );
   }
